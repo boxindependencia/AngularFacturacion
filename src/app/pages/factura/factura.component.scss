@@ -1,0 +1,80 @@
+.cliente-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  
+    .form-control {
+      width: 60%; /* Ajusta el tamaño del campo de búsqueda */
+      max-width: 400px; /* Limita el ancho máximo */
+      margin-right: auto; /* Alinea el campo de búsqueda a la izquierda */
+    }
+  .ppp{
+    width: 50px;
+    height: 30px;
+  }
+    .btn-primary {
+      margin-left: auto; /* Alinea el botón a la derecha */
+    }
+   
+      
+      
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 4px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: #004085;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+  
+ 
+ 
+  
+  
+  
+
+  
+  
+ 
+  
+  .btn-close {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+
+  #factura {
+    display: flex;
+    
+    
+   
+    
+    #datoscliente {
+      display: flex;
+      flex-direction: column;
+      width: 48%; /* Ocupa el 48% del ancho */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para el contorno */
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+   margin-top: 30px;
+      width: 48%; /* Ocupa el 48% del ancho */
+
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+  
+  
+  }
+  

@@ -1,0 +1,14 @@
+.container {
+    width: 50%;
+    margin: 0 auto; /* Centrar horizontalmente */
+    display: flex;
+    flex-direction: column; /* Para que el contenido interno se apile en columna */
+    align-items: center; /* Centrar contenido horizontalmente */
+     /* Centrar contenido verticalmente */
+    min-height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    padding: 1rem; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para destacar */
+    background-color: #b6efeb; /* Color de fondo suave */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  

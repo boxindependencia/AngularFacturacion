@@ -1,0 +1,41 @@
+header {
+    width: 50%px; /* Ocupar todo el ancho disponible */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar paddings */
+    background-color: #e7d5d5; /* Fondo de tu elección */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    position: relative; /* Asegura que esté en su posición natural */
+    z-index: 10; /* Prioridad en el apilado de elementos */
+    border-top: 2;
+    height: 20px;
+  
+    .cabecera {
+      display: flex;
+      justify-content: space-between; /* Distribuir enlaces uniformemente */
+      
+      padding: 1rem; /* Espaciado interno para los elementos */
+    
+    }
+  
+    .nav-link {
+      list-style: none; /* Quitar puntos de lista */
+      display: flex; /* Alinear elementos en fila */
+      gap: 1rem; /* Separación entre los elementos */
+  
+      li {
+        a {
+          text-decoration: none; /* Quitar subrayado */
+          color: #333; /* Color del texto */
+          font-weight: bold; /* Texto en negrita */
+          padding: 0.5rem 1rem; /* Espaciado interno */
+          border-radius: 4px; /* Bordes redondeados */
+          transition: background-color 0.3s ease; /* Animación al hover */
+  
+          &:hover {
+            background-color: #ddd; /* Fondo al pasar el mouse */
+          }
+        }
+      }
+    }
+  }
+  

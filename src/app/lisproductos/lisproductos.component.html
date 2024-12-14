@@ -1,0 +1,31 @@
+<!-- lista-clientes.component.html -->
+<div *ngIf="productos.length > 0; else noClientes">
+    <table border="1" id="tableprodcut">
+      <thead>
+        <tr>
+          <th>codigo</th>
+          <th>Nombre</th>
+          <th>precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos">
+            <!-- Producto -->
+            <td>{{ producto.codigo }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.precio | currency }}</td>
+            <td>
+              <!-- Seleccionar producto -->
+              <button (click)="seleccionarProducto(producto)">Seleccionar</button>
+              
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <ng-template #noClientes>
+    <p>No existe productos en stock</p>
+  </ng-template>
+  

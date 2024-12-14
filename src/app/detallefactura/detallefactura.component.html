@@ -1,0 +1,53 @@
+
+
+<div *ngIf="producto">
+  <p><strong>Código:</strong> {{ producto.codigo }}</p>
+  <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+  <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+</div>
+
+<h3>Detalle de factura</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Producto</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>PrecioNeto</th>
+      <th>aciones</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productosSeleccionados">
+      <td>{{ producto.codigo }}</td>
+      <td>{{ producto.nombre }}</td>
+      <td>${{ producto.precio }}</td>
+      <td>
+        <input type="number" [(ngModel)]="producto.cantidad" (ngModelChange)="actualizarCantidad(producto, producto.cantidad)" min="1" />
+
+        
+      </td>
+      <td>${{ producto.precioNeto }}</td>
+      <td><button (click)="eliminarProductoSeleccionado(producto.codigo)">Eliminar</button> </td>
+      
+    </tr>
+  </tbody>
+</table>
+<div>
+    <div>
+        <label>Subtotal:</label>
+        <input id="subtotal" type="number" [value]="subtotal" disabled />
+      </div>
+      
+      <div>
+        <label>IVA (19%):</label>
+        <input id="ivaCalculado" type="number" [value]="ivaCalculado" disabled /> <!-- Mostrar el IVA calculado -->
+      </div>
+      
+      <div>
+        <label>Total:</label>
+        <input id="total" type="number" [value]="total" disabled />
+      </div>
+</div>

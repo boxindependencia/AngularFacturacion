@@ -1,0 +1,27 @@
+<app-cabecera></app-cabecera>
+
+<h1>Productos </h1>
+
+<app-lisproductos [productos]="productosFiltrados"></app-lisproductos>
+
+
+<button class="btn btn-primary" (click)="abrirModal()">Ingresar producto</button>
+
+<div class="custom-modal" *ngIf="mostrarModal">
+    <div class="modal-backdrop" (click)="cerrarModal()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Ingresar producto</h5>
+        <button (click)="cerrarModal()" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Componente Ingresar Cliente -->
+        <app-ingresarproducto></app-ingresarproducto>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="cerrarModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+  <button [routerLink]="['/factura']">Volver</button>
+

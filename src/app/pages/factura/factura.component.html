@@ -1,0 +1,88 @@
+<app-cabecera></app-cabecera>
+
+<div id="factura">
+    <div id="datoscliente">
+        <p><strong>RUT:</strong> {{ cliente.rut }}</p>
+        <p><strong>Nombre:</strong> {{ cliente.nombre }}</p>
+        <p><strong>Dirección:</strong> {{ cliente.direccion }}</p>
+      </div>
+      
+      <!-- Formulario -->
+      <form [formGroup]="facturaForm" (ngSubmit)="guardarFactura()">
+        <div>
+          <label for="fecha">Fecha:</label>
+          <input id="fecha" formControlName="fecha" type="date" required />
+        </div>
+
+      
+        <div>
+          <label for="folio">Nº de Folio:</label>
+          <input id="folio" formControlName="folio" type="text" [value]="folio" readonly />
+        </div>
+      
+        <div>
+          <label for="giro">Giro:</label>
+          <input id="giro" formControlName="giro" type="text" required />
+        </div>
+      
+       
+      </form>
+    </div>
+
+      <input 
+      type="text" 
+      [(ngModel)]="terminoBusqueda" 
+      (input)="Buscar()" 
+      placeholder="Buscar prodcutos." 
+      class="form-control buscar-cliente" />
+      
+
+       <app-lisproductos [productos]="productosFiltrados.slice(0, 2)"></app-lisproductos>
+      
+      
+      
+
+<button class="btn btn-primary" (click)="abrirModal()">Ingresar producto</button>
+<div class="custom-modal" *ngIf="mostrarModal">
+    <div class="modal-backdrop" (click)="cerrarModal()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Buscar Producto</h5>
+        <button (click)="cerrarModal()" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+          <div>
+            <input 
+              type="text" 
+              [(ngModel)]="terminoBusqueda" 
+              (input)="Buscar()" 
+              placeholder="Buscar cliente..." 
+              class="form-control buscar-cliente" />
+          </div>
+          <app-lisproductos [productos]="productosFiltrados"></app-lisproductos>
+          <button type="submit" [disabled]="formulario.invalid">guardar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="cerrarModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+  
+ 
+  
+
+<!-- factura.component.html -->
+<div>
+    <!-- Código para seleccionar productos, etc. -->
+    <app-detallefactura *ngIf="showDetalleFactura"></app-detallefactura>
+  </div>
+ 
+
+<div>
+    <button type="submit" [disabled]="!facturaForm.valid">Guardar Factura</button>
+  </div>
+
+
+

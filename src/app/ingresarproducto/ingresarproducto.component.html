@@ -1,0 +1,18 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="codigo">codigo:</label>
+      <input id="codigo" formControlName="codigo" type="text" required>
+    </div>
+  
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" type="text" required>
+    </div>
+  
+    <div>
+      <label for="precio">precio:</label>
+      <input id="precio" formControlName="precio" type="text" required>
+    </div>
+  
+    <button type="submit" [disabled]="formulario.invalid">Enviar</button>
+  </form>

@@ -1,0 +1,35 @@
+<!-- lista-clientes.component.html -->
+<div *ngIf="clientes.length > 0; else noClientes">
+  <h2>Lista de Clientes</h2>
+  <table border="1" id="listclient">
+    <thead id="td">
+      <tr>
+        <th id="encabezado">RUT</th >
+        <th id="encabezado">Nombre</th>
+        <th id="encabezado">Dirección</th>
+        <th id="encabezado1">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>
+          <a [routerLink]="['/factura', cliente.rut]" [queryParams]="{ nombre: cliente.nombre, direccion: cliente.direccion }">
+            {{ cliente.rut }}
+        </a>
+        
+        </td>
+        
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.direccion }}</td>
+        <td>
+          <!--<button (click)="editarCliente(cliente)">Editar</button>-->
+          <button (click)="eliminarCliente(cliente)" id="botonclienteeliminar">Eliminar</button > <!-- Elimina el cliente -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noClientes>
+  <p>No hay clientes disponibles.</p>
+</ng-template>
