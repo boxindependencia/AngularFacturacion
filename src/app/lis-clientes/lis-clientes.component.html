@@ -1,35 +1,42 @@
-<!-- lista-clientes.component.html -->
 <div *ngIf="clientes.length > 0; else noClientes">
-  <h2>Lista de Clientes</h2>
-  <table border="1" id="listclient">
-    <thead id="td">
-      <tr>
-        <th id="encabezado">RUT</th >
-        <th id="encabezado">Nombre</th>
-        <th id="encabezado">Dirección</th>
-        <th id="encabezado1">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cliente of clientes">
-        <td>
-          <a [routerLink]="['/factura', cliente.rut]" [queryParams]="{ nombre: cliente.nombre, direccion: cliente.direccion }">
-            {{ cliente.rut }}
-        </a>
-        
-        </td>
-        
-        <td>{{ cliente.nombre }}</td>
-        <td>{{ cliente.direccion }}</td>
-        <td>
-          <!--<button (click)="editarCliente(cliente)">Editar</button>-->
-          <button (click)="eliminarCliente(cliente)" id="botonclienteeliminar">Eliminar</button > <!-- Elimina el cliente -->
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Contenedor con scroll -->
+  <div class="table-container">
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">RUT</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody class="table-light">
+        <tr *ngFor="let cliente of clientes">
+          <td>
+            <a 
+              [routerLink]="['/factura', cliente.rut]" 
+              [queryParams]="{ nombre: cliente.nombre, direccion: cliente.direccion }"
+              class="text-decoration-none text-primary"
+            >
+              {{ cliente.rut }}
+            </a>
+          </td>
+          <td>{{ cliente.nombre }}</td>
+          <td>{{ cliente.direccion }}</td>
+          <td>
+            <button 
+              (click)="eliminarCliente(cliente)" 
+              class="btn btn-danger btn-sm"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <ng-template #noClientes>
-  <p>No hay clientes disponibles.</p>
+  <p class="text-center text-muted">No hay clientes disponibles.</p>
 </ng-template>

@@ -1,31 +1,35 @@
-<!-- lista-clientes.component.html -->
-<div *ngIf="productos.length > 0; else noClientes">
-    <table border="1" id="tableprodcut">
-      <thead>
+<div *ngIf="productos.length > 0; else noProductos">
+  <!-- Contenedor con scroll -->
+  <div class="table-container">
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-dark">
         <tr>
-          <th>codigo</th>
-          <th>Nombre</th>
-          <th>precio</th>
-          <th>Acciones</th>
+          <th scope="col">Código</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Acciones</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-light">
         <tr *ngFor="let producto of productos">
-            <!-- Producto -->
-            <td>{{ producto.codigo }}</td>
-            <td>{{ producto.nombre }}</td>
-            <td>{{ producto.precio | currency }}</td>
-            <td>
-              <!-- Seleccionar producto -->
-              <button (click)="seleccionarProducto(producto)">Seleccionar</button>
-              
-            </td>
-          </tr>
+          <td>{{ producto.codigo }}</td>
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.precio | currency }}</td>
+          <td>
+            <!-- Botón para seleccionar producto -->
+            <button 
+              (click)="seleccionarProducto(producto)" 
+              class="btn btn-success btn-sm"
+            >
+              Seleccionar
+            </button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
-  
-  <ng-template #noClientes>
-    <p>No existe productos en stock</p>
-  </ng-template>
-  
+</div>
+
+<ng-template #noProductos>
+  <p class="text-center text-muted">No existen productos en stock.</p>
+</ng-template>

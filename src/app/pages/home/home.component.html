@@ -2,17 +2,21 @@
   <!-- Cabecera del componente -->
   <app-cabecera></app-cabecera>
   
+    
+  
   <!-- Controles de Cliente -->
   <div class="cliente-controles">
+  
     <div>
       <input 
         type="text" 
         [(ngModel)]="terminoBusqueda" 
         (input)="onBuscar()" 
-        placeholder="Buscar cliente..." 
+        placeholder="Buscar cliente 🔎" 
         class="form-control buscar-cliente" />
+        
     </div>
-    <button class="btn btn-primary" (click)="abrirModal()">Ingresar Cliente</button>
+    <button class="btn btn-success" (click)="abrirModal()">Ingresar Cliente</button>
   </div>
 
   <!-- Lista de Clientes -->
@@ -22,7 +26,6 @@
     <div class="modal-backdrop" (click)="cerrarModal()"></div>
     <div class="modal-content">
       <div class="modal-header">
-        <h5>Ingresar Cliente</h5>
         <button (click)="cerrarModal()" class="btn-close">&times;</button>
       </div>
       <div class="modal-body">

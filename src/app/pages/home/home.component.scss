@@ -2,18 +2,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 20px;
   
     .form-control {
-      width: 60%; /* Ajusta el tamaño del campo de búsqueda */
+      width: 72%; /* Ajusta el tamaño del campo de búsqueda */
       max-width: 400px; /* Limita el ancho máximo */
-      margin-right: auto; /* Alinea el campo de búsqueda a la izquierda */
+      margin-left: 385%; /* Alinea el campo de búsqueda a la izquierda */
     }
   
-    .btn-primary {
-      margin-left: auto; /* Alinea el botón a la derecha */
+    .btn-success {
+      margin-left: 340px; /* Alinea el botón a la derecha */
+      
     }
+
   
     button {
       padding: 8px 16px;

@@ -1,15 +1,9 @@
-#Listcliente{
-    background-color: rgb(176, 123, 123);
-    width: 550px;
-    position: relative;
-   
-}
-#encabezado{
-    width: 150px;
-    text-align: center;
-}
-#encabezado1{
-    width: 80px;
-    text-align: center;
-}
+.table-container {
+    max-height: 500px; /* Ajusta la altura máxima según lo necesario */
+    overflow-y: auto; /* Scroll vertical */
+    overflow-x: auto; /* Scroll horizontal, por si las columnas son anchas */
+    border: 1px solid #ddd; /* Opcional: un borde para destacar el contenedor */
+  }
 
+
+  

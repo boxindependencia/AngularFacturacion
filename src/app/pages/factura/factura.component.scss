@@ -9,7 +9,13 @@
       width: 60%; /* Ajusta el tamaño del campo de búsqueda */
       max-width: 400px; /* Limita el ancho máximo */
       margin-right: auto; /* Alinea el campo de búsqueda a la izquierda */
+      
     }
+
+    .buscar-cliente {
+      border: 1px solid black; /* Borde negro */
+    }
+    
   .ppp{
     width: 50px;
     height: 30px;
@@ -17,7 +23,8 @@
     .btn-primary {
       margin-left: auto; /* Alinea el botón a la derecha */
     }
-   
+
+  
       
       
     button {

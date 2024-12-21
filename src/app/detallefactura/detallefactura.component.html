@@ -7,34 +7,46 @@
 </div>
 
 <h3>Detalle de factura</h3>
-<table border="1">
-  <thead>
-    <tr>
-      <th>Código</th>
-      <th>Producto</th>
-      <th>Precio</th>
-      <th>Cantidad</th>
-      <th>PrecioNeto</th>
-      <th>aciones</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let producto of productosSeleccionados">
-      <td>{{ producto.codigo }}</td>
-      <td>{{ producto.nombre }}</td>
-      <td>${{ producto.precio }}</td>
-      <td>
-        <input type="number" [(ngModel)]="producto.cantidad" (ngModelChange)="actualizarCantidad(producto, producto.cantidad)" min="1" />
+<div class="table-container">
+  <table class="table table-bordered table-hover text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>Código</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Precio Neto</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody class="table-light">
+      <tr *ngFor="let producto of productosSeleccionados">
+        <td>{{ producto.codigo }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.precio | currency }}</td>
+        <td>
+          <input 
+            type="number" 
+            [(ngModel)]="producto.cantidad" 
+            (ngModelChange)="actualizarCantidad(producto, producto.cantidad)" 
+            min="1" 
+            class="form-control form-control-sm"
+          />
+        </td>
+        <td>{{ producto.precioNeto | currency }}</td>
+        <td>
+          <button 
+            (click)="eliminarProductoSeleccionado(producto.codigo)" 
+            class="btn btn-danger btn-sm"
+          >
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-        
-      </td>
-      <td>${{ producto.precioNeto }}</td>
-      <td><button (click)="eliminarProductoSeleccionado(producto.codigo)">Eliminar</button> </td>
-      
-    </tr>
-  </tbody>
-</table>
 <div>
     <div>
         <label>Subtotal:</label>
